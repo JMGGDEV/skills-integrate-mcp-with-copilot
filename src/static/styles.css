@@ -16,12 +16,41 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.account-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-controls button {
+  background-color: white;
+  color: #1a237e;
+}
+
+.account-controls button:hover {
+  background-color: #e8eaf6;
+}
+
+#teacher-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#teacher-account.hidden {
+  display: none;
 }
 
 header h1 {
@@ -192,9 +221,55 @@ button:hover {
   display: none;
 }
 
+dialog {
+  width: min(420px, calc(100% - 32px));
+  margin: auto;
+  padding: 24px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dialog-heading h3 {
+  color: #1a237e;
+}
+
+.dialog-close {
+  padding: 0 8px;
+  background: transparent;
+  color: #333;
+  font-size: 24px;
+}
+
+.dialog-close:hover {
+  background: #eee;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 520px) {
+  header {
+    padding: 64px 12px 20px;
+  }
+
+  .account-controls {
+    top: 10px;
+    right: 10px;
+  }
 }
